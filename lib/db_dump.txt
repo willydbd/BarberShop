@@ -1,0 +1,46 @@
+//create sales table
+
+CREATE TABLE IF NOT EXISTS `salesComm` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
+  `staff_name` varchar(300) NOT NULL,
+  `service_rendered` varchar(300) NOT NULL,
+  `amount` double(15,2) NOT NULL,
+  `add_date` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+
+--
+ALTER TABLE `salescomm`
+  ADD `manager_name` varchar (100) NOT NULL
+  AFTER `staff_name`;
+--
+-- Table structure for table `travel`
+--
+
+CREATE TABLE IF NOT EXISTS `staffs` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
+  `staff_name` varchar(300) NOT NULL,
+  UNIQUE KEY `uid` (`id`),
+  PRIMARY KEY (`staff_name`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+
+ALTER TABLE `staffs`
+  ADD `add_date` datetime NOT NULL
+  AFTER `staff_name`;
+
+INSERT INTO `staffs` (`id`, `staff_name`) VALUES
+('1', 'PapiTunde'),
+('2', 'JamesDavid'),
+('3', 'TerryG'),
+('4', 'Ay'),
+('5', 'TemiObinna');
+
+CREATE TABLE IF NOT EXISTS `customer` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
+  `email` varchar(300) NOT NULL,
+  `phone_number` varchar(300) NOT NULL,
+  `customer_name` varchar(300) NOT NULL,
+  `address` varchar(300) NOT NULL,
+  UNIQUE KEY `uid` (`id`),
+  PRIMARY KEY (`phone_number`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
